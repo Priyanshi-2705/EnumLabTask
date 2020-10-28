@@ -3,6 +3,7 @@ package main;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.Scanner;
 
 public enum Months {
     JANUARY(31),
@@ -40,7 +41,7 @@ class nowCalendar {
                         Locale.US
                 )
         );
-        //Scanner scanner = new Scanner(System.in);
+
         String currentMonthName = new GregorianCalendar().getDisplayName(
                 Calendar.MONTH,
                 Calendar.LONG,
@@ -88,6 +89,14 @@ class nowCalendar {
             );
             default -> System.out.println("Please check the name of the month! ");
         }
+        System.out.println("Please enter today's date: ");
+        Scanner scanner = new Scanner(System.in);
+        int currentDate = scanner.nextInt();
+        System.out.println("Current date is " + currentDate + " !");
+        scanner.close();
+
+        int remainingDayInMonth = thisMonth.getTotalNumberOfDays() - currentDate;
+        System.out.println(remainingDayInMonth + " days left in " + currentMonthName + " !");
 
 
     }
