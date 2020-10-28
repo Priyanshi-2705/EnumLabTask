@@ -3,7 +3,6 @@ package main;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
-import java.util.Scanner;
 
 public enum Months {
     JANUARY(31),
@@ -41,14 +40,58 @@ class nowCalendar {
                         Locale.US
                 )
         );
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
         String currentMonthName = new GregorianCalendar().getDisplayName(
                 Calendar.MONTH,
                 Calendar.LONG,
                 Locale.US
         ).toUpperCase();
         System.out.println("Current Month is " + currentMonthName + " !");
+        Months thisMonth = Months.valueOf(currentMonthName);
+
+        switch (thisMonth) {
+            case JANUARY -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in January!"
+            );
+            case FEBRUARY -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in February!"
+            );
+            case MARCH -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in March!"
+            );
+            case APRIL -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in April!"
+            );
+            case MAY -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in May!"
+            );
+            case JUNE -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in June!"
+            );
+            case JULY -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in July!"
+            );
+            case AUGUST -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in August!"
+            );
+            case SEPTEMBER -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in September!"
+            );
+            case OCTOBER -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in October!"
+            );
+            case NOVEMBER -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in November!"
+            );
+            case DECEMBER -> System.out.println(
+                    "We have " + thisMonth.getTotalNumberOfDays() + " days in December!"
+            );
+            default -> System.out.println("Please check the name of the month! ");
+        }
+
+
     }
 }
 
-//Months thisMonth = Months.valueOf(currentMonthName);
+
+
